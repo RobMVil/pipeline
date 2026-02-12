@@ -10,8 +10,10 @@ dependencies = [
     "playwright",
     "pytest-playwright",
     "faker",
+    "pytest-rerunfailures"
 ]
 
 [tool.pytest.ini_options]
+addopts = "-v -s"
 testpaths = ["tests"]
 pythonpath = ["src"]
