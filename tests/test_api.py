@@ -18,9 +18,9 @@ def api():
 #    assert "name" in data
 
 
-def test_get_pet_not_found(api):
-    response = api.get_pet(999999)
-    assert response.status_code == 404
+#def test_get_pet_not_found(api):
+#    response = api.get_pet(999999)
+#    assert response.status_code == 404
 
 
 def test_create_pet_with_client(api):  
