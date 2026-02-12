@@ -16,8 +16,8 @@ permissions:
 
 
 jobs:
-  build:
-    name: python
+  api:
+    name: api-check
     runs-on: ubuntu-latest
 
     steps:
@@ -44,3 +44,27 @@ jobs:
 
       - name: Run tests
         run: uv run pytest tests
+
+  playwright:
+    name: playwright-tests
+    needs: api
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Install the project (uv sync)
+        run: uv sync --locked --all-extras --dev
+
+      - name: Install Playwright browsers
+        run: uv run playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: uv run pytest tests -k playwright
