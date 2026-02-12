@@ -21,7 +21,7 @@ class PetstoreClient:
         url = f"{self.base_url}/pet"
         response = requests.put(url, json=pet_data) # PUT uppdaterar en befintlig resurs
         return response
-    
+    fsafa
 
     def delete_pet(self, pet_id):
         url = f"{self.base_url}/pet/{pet_id}"
