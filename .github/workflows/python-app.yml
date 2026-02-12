@@ -39,9 +39,6 @@ jobs:
       - name: Run ruff --fix
         run: uv run ruff check --fix .
 
-      - name: Run ruff check
-        run: uv run ruff check .
-
       - name: Run tests
         run: uv run pytest tests/test_api.py
 
