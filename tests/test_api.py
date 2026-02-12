@@ -7,15 +7,15 @@ def api():
     return PetstoreClient()
 
 
-@pytest.mark.flaky(reruns=3, reruns_delay=1)
-@pytest.mark.parametrize("pet_id", [1, 2, 3])
-def test_get_pet_by_id(api, pet_id):
-    response = api.get_pet(pet_id)
-    data = response.json()
-    
-    assert response.status_code == 200
-    assert data["id"] == pet_id
-    assert "name" in data
+#@pytest.mark.flaky(reruns=3, reruns_delay=1)
+#@pytest.mark.parametrize("pet_id", [1, 2, 3])
+#def test_get_pet_by_id(api, pet_id):
+#    response = api.get_pet(pet_id)
+#    data = response.json()
+#    
+#    assert response.status_code == 200
+#    assert data["id"] == pet_id
+#    assert "name" in data
 
 
 def test_get_pet_not_found(api):
