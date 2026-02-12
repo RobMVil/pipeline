@@ -11,6 +11,10 @@ class PetstoreClient:
         return response
 
 
+
+
+
+
     def get_pet(self, pet_id):
         url = f"{self.base_url}/pet/{pet_id}"
         response = requests.get(url) # Get hämtar/läser
