@@ -64,7 +64,7 @@ jobs:
         run: uv sync --locked --all-extras --dev
 
       - name: Install Playwright browsers
-        run: uv run playwright install --with-deps
+        run: uv run playwright install
 
       - name: Run Playwright tests
         run: uv run pytest tests/test_gui.py -k playwright
